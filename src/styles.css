@@ -29,6 +29,7 @@
   min-height: 36px;
   border: 2px dotted turquoise;
 }
+
 /* Don't touch this END */
 
 /* Write CSS Below Here */
@@ -39,18 +40,108 @@
     https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors
 */
 
-.two-column-grid__expand-two {}
+.two-column-grid__expand-two {
+  display: grid;
+  gap: 10px;
+  grid-template:
+    'left right' / 20% 1fr
+  ;
+}
 
-.three-column-grid {}
+/* .logo {
+    grid-area: left;
+  } */
 
-.three-column-grid__expand-two {}
+.three-column-grid {
+  display: grid;
+  gap: 10px;
+  grid-template:
+    'left center right' / 1fr 1fr 1fr;
+}
 
-.five-column-grid {}
+.three-column-grid__expand-two {
+  display: grid;
+  gap: 10px;
+  grid-template:
+    'left center right' / 5% 1fr 5%;
+}
 
-.center-grid {}
+.five-column-grid {
+  display: grid;
+  gap: 10px;
+  grid-template:
+    'one two three four five' / 1fr 1fr 1fr 1fr 1fr
+  ;
+}
 
-.grid-in-grid-1 {}
+.center-grid {
+  display: grid;
+  grid-template:
+    'center'
+  ;
+  place-items: center;
+}
 
-.grid-in-grid-2 {}
+.center-grid .box {
+  grid-area: center;
+  width: 25%;
+}
+
+.grid-in-grid-1 {
+  display: grid;
+  grid-template:
+    'left right' /1fr 1fr
+  ;
+  gap: 10px;
+}
+
+.grid-in-grid-1 .box:nth-of-type(1) {
+  grid-area: left;
+  /* It works without defining grid-area */
+  display: grid;
+  grid-template:
+    'left center right' / 1fr 1fr 1fr
+  ;
+}
+
+.grid-in-grid-1 .box:nth-of-type(2) {
+  grid-area: right;
+  /* It works without defining grid-area */
+  display: grid;
+  gap: 10px;
+  grid-template:
+    'one two three four five' / 1fr 1fr 1fr 1fr 1fr
+  ;
+}
+
+.grid-in-grid-2 {
+  display: grid;
+  grid-template:  
+    'left center right' / 10% 1fr 30%
+  ;
+  gap: 10px;
+}
+
+.grid-in-grid-2 .box:nth-of-type(1) {
+  grid-area: left;
+  grid-template: 
+    'one' /1fr
+  ;
+}
+.grid-in-grid-2 .box:nth-of-type(2) {
+  background-color: black;
+  grid-area: center;
+
+}
+
+.grid-in-grid-2 .box:nth-of-type(3) {
+  grid-area: right;
+  display: grid;
+  grid-template: 
+    'left center right' / 1fr 1fr 1fr
+  ;
+  gap: 10px;
+}
+
 
 .grid-madness {}
