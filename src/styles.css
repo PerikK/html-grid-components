@@ -129,9 +129,7 @@
   ;
 }
 .grid-in-grid-2 .box:nth-of-type(2) {
-  background-color: black;
   grid-area: center;
-
 }
 
 .grid-in-grid-2 .box:nth-of-type(3) {
@@ -144,4 +142,10 @@
 }
 
 
-.grid-madness {}
+.grid-madness {
+
+
+
+
+
+}
