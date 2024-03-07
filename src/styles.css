@@ -143,9 +143,21 @@
 
 
 .grid-madness {
+  display: grid;
+  grid-template:  
+    'header header header' 150px
+    'left center right' 1fr
+    'footer footer footer' 150px
+  ;
+  gap: 10px;
+}
 
-
-
-
-
+.grid-madness .box:nth-of-type(5) {
+  background-color: black;
+  grid-area: header;
+  display: grid;
+  grid-template: 
+    'one two three for five'
+  ;
+  gap: 10;
 }
